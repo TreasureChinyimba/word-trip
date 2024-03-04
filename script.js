@@ -2,7 +2,9 @@
 const meInput = document.getElementById('meInput');
 const meBtn = document.getElementById('meBtn');
 meBtn === null || meBtn === void 0 ? void 0 : meBtn.addEventListener('click', () => {
-    if (meInput.value === 'me') {
+    let result = meInput.value.toLocaleUpperCase();
+    console.log(result);
+    if (result === 'ME') {
         alert('good');
     }
     else {
