@@ -7,5 +7,10 @@ input {
     text-align: center;
     color: blue;
     font-style: monospace;
+    border: solid black 3px;
+    border-radius: 10px;
 }
 
+.longer {
+    width: 90px;
+}
