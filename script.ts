@@ -1,5 +1,5 @@
-const meInput = document.getElementById('meInput') as HTMLInputElement;
-const meBtn = document.getElementById('meBtn');
+const meInput = document.querySelectorAll('.meInput');
+const meBtn = document.querySelectorAll('.meBtn');
 
 meBtn?.addEventListener('click', ()=>{
     let result = meInput.value.toLocaleUpperCase();
