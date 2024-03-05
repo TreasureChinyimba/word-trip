@@ -1,9 +1,14 @@
 "use strict";
 const startBtn = document.getElementById('startBtn');
 const startGame = document.getElementById('start');
+const player = document.getElementById('player');
 const game = document.getElementById('game');
+const back = document.getElementById('back');
 startBtn === null || startBtn === void 0 ? void 0 : startBtn.addEventListener('click', () => {
     startGame === null || startGame === void 0 ? void 0 : startGame.style.display = 'none';
+    const welcomeMsg = document.createElement('h1');
+    welcomeMsg.textContent = 'Hello ' + player.value;
+    back === null || back === void 0 ? void 0 : back.appendChild(welcomeMsg);
     game === null || game === void 0 ? void 0 : game.style.display = 'block';
 });
 function me() {
