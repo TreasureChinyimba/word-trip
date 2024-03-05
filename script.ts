@@ -1,3 +1,16 @@
+    const startBtn = document.getElementById('startBtn');
+    const startGame = document.getElementById('start');
+    const player = document.getElementById('player') as HTMLInputElement;
+    const game = document.getElementById('game');
+    const back = document.getElementById('back');
+    startBtn?.addEventListener('click', ()=>{
+        startGame?.style.display='none';
+        const welcomeMsg = document.createElement('h1');
+        welcomeMsg.textContent = 'Hello '+player.value;
+        back?.appendChild(welcomeMsg)
+        game?.style.display = 'block';
+    })    
+
 function me() {
     const meInput = document.getElementById('meInput') as HTMLInputElement;
 const meBtn = document.getElementById('meBtn');

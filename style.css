@@ -12,6 +12,10 @@ body {
 
 }
 
+.game {
+    display: none;
+}
+
 h1 {
     padding-bottom: 50px;
     text-align: center;

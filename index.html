@@ -7,9 +7,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome To CLUR Word Trip</h1>
-        <p>You are suppose to make 4 different words using the letters below.</p>
+    <div class="container" id="back">
+        <div class="start" id="start">
+            <h1>Welcome To CLUR Word Trip</h1>
+            <p>Can i have your name please</p>
+            <input type="text" placeholder="Enter Your Name" id="player">
+            <button id="startBtn">Start</button>
+        </div>
+        <div class="game" id="game">
+            <p>You are suppose to make 4 different words using the letters below.</p>
         <p>Your letters are: <h2>A| M|  E| S| I| S| E| D</h2></p>
         <!-- me, aim, seed, seeds -->
         <input type="text" placeholder="2" id="meInput"class='meInput' maxlength="2">
@@ -27,6 +33,7 @@
         <!-- seed -->
         <input type="text" placeholder="5" id="seedsInput"class='seedsInput' maxlength="5">
         <button id="seedsBtn" class="seedsBtn">Enter</button>
+        </div>
     </div>
 
     <script src="script.js"></script>

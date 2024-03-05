@@ -1,4 +1,11 @@
 "use strict";
+const startBtn = document.getElementById('startBtn');
+const startGame = document.getElementById('start');
+const game = document.getElementById('game');
+startBtn === null || startBtn === void 0 ? void 0 : startBtn.addEventListener('click', () => {
+    startGame === null || startGame === void 0 ? void 0 : startGame.style.display = 'none';
+    game === null || game === void 0 ? void 0 : game.style.display = 'block';
+});
 function me() {
     const meInput = document.getElementById('meInput');
     const meBtn = document.getElementById('meBtn');
