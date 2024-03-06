@@ -2,33 +2,53 @@ document.addEventListener('DOMContentLoaded', () => {
     const startBtn = document.getElementById('startBtn');
     const startGame = document.getElementById('start');
     const game = document.getElementById('game');
-    const player = document.getElementById('player') as HTMLInputElement;
+    const player = document.getElementById('player') as HTMLInputElement | null;
 
-    startBtn?.addEventListener('click', () => {
-        startGame?.style.display = 'none';
+    if (!startBtn || !startGame || !game || !player) {
+        console.error("One or more required elements not found!");
+        return;
+    }
+
+    startBtn.addEventListener('click', () => {
+        startGame.style.display = 'none';
         const welcomeMsg = document.createElement('h1');
         welcomeMsg.textContent = 'Good Luck ' + player.value;
-        document.getElementById('back')?.appendChild(welcomeMsg);
-        game?.style.display = 'block';
+        const back = document.getElementById('back');
+        if (back) {
+            back.appendChild(welcomeMsg);
+        }
+        game.style.display = 'block';
     });
 
-    // Attach event listener to a common parent element
-    document.getElementById('inputs')?.addEventListener('click', (event) => {
-        if (event.target instanceof HTMLElement) {
-            const input = event.target.previousElementSibling as HTMLInputElement;
-            const result = input.value.trim().toUpperCase();
+    const inputsContainer = document.getElementById('inputs');
+    if (!inputsContainer) {
+        console.error("Inputs container not found!");
+        return;
+    }
 
-            if (result === event.target.dataset.answer) {
-                input.style.border = 'solid greenyellow';
-                alert('Correct');
+    inputsContainer.addEventListener('click', (event) => {
+        if (!(event.target instanceof HTMLElement)) {
+            return;
+        }
+        const input = event.target.previousElementSibling as HTMLInputElement;
+        const result = input.value.trim().toUpperCase();
+        const expectedAnswer = event.target.dataset.answer;
+
+        if (!expectedAnswer) {
+            console.error("Missing 'data-answer' attribute on button!");
+            return;
+        }
+
+        if (result === expectedAnswer) {
+            input.style.border = 'solid greenyellow';
+            alert('Correct');
+        } else {
+            if (input.value === '') {
+                alert('Type in an answer');
             } else {
-                if (input.value === '') {
-                    alert('Type in an answer');
-                } else {
-                    input.style.border = 'solid red';
-                    alert('Incorrect');
-                    input.value = '';
-                }
+                input.style.border = 'solid red';
+                alert('Incorrect');
+                input.value = '';
             }
         }
     });
