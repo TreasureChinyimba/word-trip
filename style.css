@@ -12,6 +12,7 @@ body {
 
 }
 
+
 .game {
     display: none;
 }
@@ -59,4 +60,8 @@ button {
 button:hover {
     background: white;
     color: black;
+}
+
+#player {
+    width: 80%;
 }

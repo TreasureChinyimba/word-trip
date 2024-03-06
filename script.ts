@@ -6,7 +6,7 @@
     startBtn?.addEventListener('click', ()=>{
         startGame?.style.display='none';
         const welcomeMsg = document.createElement('h1');
-        welcomeMsg.textContent = 'Hello '+player.value;
+        welcomeMsg.textContent = 'Good Luck '+player.value;
         back?.appendChild(welcomeMsg)
         game?.style.display = 'block';
     })    
@@ -110,6 +110,12 @@ seedsBtn?.addEventListener('click', ()=>{
     } 
 })
 }
+
+document.addEventListener('click', ()=>{
+    if (result === 'ME') {
+        
+    }
+})
 
 me()
 aim()
